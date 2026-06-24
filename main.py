@@ -2,6 +2,7 @@ import asyncio
 import sqlite3
 import re
 import requests
+import os
 from bs4 import BeautifulSoup
 from dataclasses import dataclass
 
@@ -17,7 +18,11 @@ ChannelUsername = "@ORSHAGAK"
 
 Url = "https://ogak.by/расписание-учебных-занятий/"
 
-DbPath = "Data/TgBotDB.db"
+DbPath = os.path.join(
+    os.path.dirname(__file__),
+    "Data",
+    "TgBotDB.db"
+)
 
 bot = Bot(
     token="8939395956:AAEOYkHKCiRIYaVZXEYpWHArij9-SHyfmuA"
